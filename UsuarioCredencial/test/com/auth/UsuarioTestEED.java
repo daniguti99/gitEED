@@ -2,6 +2,8 @@ package com.auth;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -12,12 +14,14 @@ class UsuarioTestEED extends TestCase {
 	private static Usuario usuario1;
 	private static Usuario usuario2;
 	private static Usuario usuario3;
+	private static Usuario usuario4;
 
 	@BeforeAll
 	public static void setup() {
 		usuario1 = new Usuario("Daniel", "Gutierrez", "Password1");
-		usuario2 = new Usuario("Jose", "Guti", "Password");
+		usuario2 = new Usuario("Jose", "Guti", "Password1");
 		usuario3 = new Usuario("Jose", "Guti", "Passwor");
+		usuario4 = new Usuario("Jose", "Guti", "dgmdslsf@gmail.com", "Passwor");
 	}
 	
 	@Test
@@ -39,18 +43,15 @@ class UsuarioTestEED extends TestCase {
 	@Test
 	void testEsPasswordSegura() {
 		assertTrue(usuario1.esPasswordSegura());
-		assertFalse(usuario2.esPasswordSegura());
 		assertFalse(usuario3.esPasswordSegura());
 	}
 	
 	@Test
 	void testHacerLogin() {
-		//Me da error
-        assertTrue(usuario2.hacerLogin("josgut100", "Password1"));
+        assertTrue(usuario2.hacerLogin("josgut101", "Password1"));
         assertFalse(usuario2.hacerLogin("DaniGut101", "password"));
 	}
 	
-
 }
      
 

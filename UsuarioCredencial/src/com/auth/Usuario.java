@@ -25,9 +25,11 @@ public class Usuario {
 		return intentos>=NUMERO_MAX_INTENTOS;
 	}
 	
-	private void setCredencial(Credencial credencial) {
+	/*No es necesario y no se usa en el codigo
+	 * 
+	protected void setCredencial(Credencial credencial) {
 		this.credencial=credencial;
-	}
+	}*/
 	
 	public boolean modificarPassword(String oldpass, String  newpass, String newpassverif) {
 		//1. Ver si la contrasena antigua es la contrasena actual.
@@ -41,11 +43,13 @@ public class Usuario {
 			credencial.setPassword(newpass);  //Aplicamos los cambios con un set en credencial
 			esModificarPassword = true;
 			System.out.println("La contraseña se ha modificado correctamente");
+		} else {
+			System.out.println("La constraseña no se ha podido modificar");
 		}
 			  
 		return esModificarPassword;
 	}
-	
+	 
 	public boolean esPasswordSegura() {
 	    return this.credencial.esPasswordSegura();
 	}

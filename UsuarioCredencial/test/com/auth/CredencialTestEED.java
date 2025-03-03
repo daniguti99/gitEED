@@ -25,6 +25,7 @@ class CredencialTestEED extends TestCase{
 		assertTrue("dangut100".equals(credencial1.getUsername()));
 		assertEquals("dangut100", credencial1.getUsername());
 		assertNotEquals("", credencial1.getUsername());
+		assertNotEquals("danguti101", credencial1.getUsername());
 	} 
 	
 	@Test 
@@ -45,6 +46,11 @@ class CredencialTestEED extends TestCase{
 		credencial1.setPassword("Password4");
 		assertEquals("Password4", credencial1.getPassword());
 	}
+	
+	
+	
+	
+	
 	
 	
 

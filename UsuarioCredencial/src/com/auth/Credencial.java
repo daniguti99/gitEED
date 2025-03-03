@@ -14,8 +14,8 @@ public class Credencial {
 	
 	public String generarUsername(String nombre, String apellidos) {
 		String tresNombre = nombre.substring(0, 3).toLowerCase();
-		String tresUltimasApellido = apellidos.substring(0, 3).toLowerCase();
-		return tresNombre + tresUltimasApellido + secuencia;
+		String tresApellido = apellidos.substring(0, 3).toLowerCase();
+		return tresNombre + tresApellido + secuencia;
 	}
 	 
 	public boolean comprobarPassword(String password) {
